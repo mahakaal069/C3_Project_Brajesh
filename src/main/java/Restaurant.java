@@ -69,4 +69,8 @@ public class Restaurant {
 		return this.name.equals(r.getName());
 	}
 
+    public Integer getTotalOrderValue(List<String> items) throws itemNotFoundException {
+        return null;
+    }
+
 }
