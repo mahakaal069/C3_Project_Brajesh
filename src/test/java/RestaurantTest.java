@@ -85,12 +85,20 @@ class RestaurantTest {
     @Test
     public void calculating_total_order_value_for_existing_item_should_return_expected_value() throws  itemNotFoundException {
         //WRITE UNIT TEST CASE HERE
+    	List<String> items = new ArrayList<>();
+    	items.add("Sweet corn soup");
+    	items.add("Vegetable lasagne");
+        assertEquals(388, restaurant.getTotalOrderValue(items));
     }
 
     //You may watch the video by Muthukumaran on how to write exceptions in Course 3: Testing and Version control: Optional content
     @Test
     public void calculating_total_order_value_for_non_existing_item_should_throw_exception() throws itemNotFoundException {
         //WRITE UNIT TEST CASE HERE
+    	List<String> items = new ArrayList<>();
+    	items.add("French fries");
+    	assertThrows(itemNotFoundException.class,
+                ()->restaurant.getTotalOrderValue(items));
     }
     //<<<<<<<<<<<<<<<<<<<<ORDER>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
